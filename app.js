@@ -3,7 +3,6 @@ const morgan = require("morgan");
 const helmet = require("./node_modules/helmet/dist");
 const mongoSanitize = require("./node_modules/express-mongo-sanitize");
 const cookieParser = require("cookie-parser");
-const path = require("path");
 const cors = require("cors");
 const AppError = require("./utils/appError");
 const globalErrorHandler = require("./controllers/errorController");
@@ -11,6 +10,7 @@ const spotRouter = require("./routes/spotRoutes");
 const userRouter = require("./routes/userRoutes");
 
 const app = express();
+const path = require("path");
 app.use(cors());
 // 1) ------------------MIDDLEWARE-------------
 // Set security HTTP header
