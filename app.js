@@ -14,7 +14,11 @@ const path = require("path");
 app.use(cors());
 // 1) ------------------MIDDLEWARE-------------
 // Set security HTTP header
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 //development logging
 if (process.env.NODE_ENV === "development") {
@@ -41,7 +45,7 @@ app.use("/api/v1/spots", spotRouter);
 app.use("/api/v1/users", userRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.join(__dirname + "client/build/index.html"));
 });
 
 app.all("*", (req, res, next) => {
