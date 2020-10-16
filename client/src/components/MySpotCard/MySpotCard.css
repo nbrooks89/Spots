@@ -1,0 +1,156 @@
+.container3 {
+  padding: 5px;
+  border: 2px solid #878e88;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  padding: 0;
+  background-color: #dedfde;
+  border-radius: 5px;
+}
+
+.MySpotName {
+  font-size: 25px;
+  color: #333533;
+  padding: 10px;
+  font-weight: 700;
+}
+.MySpotType {
+  font-size: 20px;
+  color: rgb(204, 134, 43);
+  text-decoration: none;
+}
+a {
+  text-decoration: none !important;
+}
+.MySpotImg {
+  display: flex;
+  /* max-height: 300px; */
+  width: 100%;
+  object-fit: cover;
+}
+
+.MyDetailsBtn {
+  display: flex;
+  align-items: center;
+  /* margin-left: 1px; */
+  padding-top: 0;
+  font-size: 20px;
+  color: white;
+  border: 1px solid #272343;
+  background-color: rgb(204, 134, 43);
+  border-radius: 5px;
+  font-weight: 500;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 40px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 15px;
+}
+.MyDetailsBtn:hover {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* margin-left: 10px; */
+  padding-top: 0;
+  font-size: 20px;
+  color: white;
+  border: 1px solid #272343;
+  background-color: rgb(233, 138, 15);
+  border-radius: 5px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 40px;
+  padding-right: 10px;
+  padding-left: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+.editBtn {
+  display: flex;
+  align-items: center;
+  /* margin-left: 1px; */
+  padding-top: 0;
+  font-size: 15px;
+  color: white;
+  border: 1px solid #272343;
+  background-color: #606260;
+  border-radius: 5px;
+  font-weight: 500;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.editBtn:hover {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* margin-left: 10px; */
+  padding-top: 0;
+  font-size: 15px;
+  color: white;
+  border: 1px solid #272343;
+
+  border-radius: 5px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  background-color: #484a47;
+}
+.deleteBtn {
+  display: flex;
+  align-items: center;
+
+  padding-top: 0;
+  font-size: 15px;
+  color: white;
+  border: 1px solid #272343;
+  background-color: rgb(194, 102, 77);
+  border-radius: 5px;
+  font-weight: 500;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.deleteBtn:hover {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* margin-left: 10px; */
+  padding-top: 0;
+  font-size: 15px;
+  color: white;
+  border: 1px solid #272343;
+  background-color: rgb(212, 46, 17);
+  border-radius: 5px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.MyBottomLayout {
+  width: 100%;
+
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit {
+  display: flex;
+}

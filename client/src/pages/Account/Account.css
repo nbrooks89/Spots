@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Lato:wght@700&display=swap");
+
+.form {
+  margin-top: 40px;
+}
+
+h1 {
+  color: rgb(9, 10, 9);
+  margin-top: 80px;
+  font-size: 25px;
+  font-family: "Bowlby One SC", cursive;
+  text-decoration: underline;
+  text-decoration-color: rgb(219, 157, 41);
+}
+.updateAccountContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #dedfde;
+  height: 100vh;
+}
+label {
+  font-family: "Lato", sans-serif;
+}
+
+.formGroup {
+  margin: 0px;
+}
+
+.updateButton {
+  border: 2px solid #484a47;
+}
+.updateButton:hover {
+  background-color: #484a47;
+  border: 2px solid orange;
+  color: white;
+}
