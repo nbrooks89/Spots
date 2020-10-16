@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const helmet = require("./node_modules/helmet/dist");
 const mongoSanitize = require("./node_modules/express-mongo-sanitize");
 const cookieParser = require("cookie-parser");
-
+const path = require("path");
 const cors = require("cors");
 const AppError = require("./utils/appError");
 const globalErrorHandler = require("./controllers/errorController");
