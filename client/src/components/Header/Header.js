@@ -29,7 +29,7 @@ class Header extends React.Component {
     console.log(this.props.user);
     return (
       <Navbar expand="xlg" className="color-nav" fixed="top">
-        {this.props.user !== null ? (
+        {this.props.user.id ? (
           <>
             <div>
               <NavLink

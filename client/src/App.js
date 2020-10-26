@@ -24,6 +24,7 @@ class App extends React.Component {
     lng: null,
     spot: [],
     coords: {},
+    distance: {},
   };
   setSpots = (data) => {
     this.setState({ spots: data.data.spots });
@@ -32,8 +33,24 @@ class App extends React.Component {
   setUser = (user) => {
     this.setState({ user: user });
   };
-  setLat = (lat) => {
-    this.setState({ lat: lat });
+
+  getUserGeolocationInfo = async () => {
+    var response = await fetch(
+      "https://geolocation-db.com/json/697de680-a737-11ea-9820-af05f4014d91"
+    );
+    const data = await response.json();
+    console.log(data);
+    this.setState({ distance: data });
+  };
+
+  handleGetRequest = async () => {
+    let jwt = await localStorage.getItem("jwt");
+    if (jwt) {
+      let user = jwt_decode(jwt);
+
+      this.setUser(user);
+      console.log("user", user);
+    }
   };
   getUserGeolocationDetails = async () => {
     const self = this;
@@ -46,24 +63,14 @@ class App extends React.Component {
     });
   };
 
-  handleGetRequest = async () => {
-    let jwt = await localStorage.getItem("jwt");
-    if (jwt) {
-      let user = jwt_decode(jwt);
-
-      this.setUser(user);
-      console.log("user", user);
-    }
-  };
-
   componentDidMount() {
     this.getUserGeolocationDetails();
-
+    this.getUserGeolocationInfo();
     this.handleGetRequest();
   }
 
   render() {
-    console.log("lat", this.state.lat);
+    console.log("dis", this.state.distance);
     console.log("lng", this.state.lng);
 
     return (
