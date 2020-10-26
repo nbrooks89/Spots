@@ -16,7 +16,7 @@ class Header extends React.Component {
   handleLogOut = async (event) => {
     try {
       await localStorage.clear("jwt");
-      // TODO: remove user from state.
+
       this.props.setUser("");
 
       console.log("here");
