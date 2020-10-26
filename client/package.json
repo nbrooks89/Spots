@@ -33,6 +33,7 @@
     "node": "v14.8.0"
   },
   "proxy": "http://localhost:8001",
+  "secure": "false",
   "browserslist": {
     "production": [
       ">0.2%",

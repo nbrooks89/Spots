@@ -20,8 +20,10 @@ class App extends React.Component {
     spots: [],
     user: { data: {} },
     location: {},
-    distance: {},
+    lat: null,
+    lng: null,
     spot: [],
+    coords: {},
   };
   setSpots = (data) => {
     this.setState({ spots: data.data.spots });
@@ -30,14 +32,18 @@ class App extends React.Component {
   setUser = (user) => {
     this.setState({ user: user });
   };
-
+  setLat = (lat) => {
+    this.setState({ lat: lat });
+  };
   getUserGeolocationDetails = async () => {
-    var response = await fetch(
-      "https://geolocation-db.com/json/697de680-a737-11ea-9820-af05f4014d91"
-    );
-    const data = await response.json();
-    // console.log(data);
-    this.setState({ distance: data });
+    const self = this;
+    await navigator.geolocation.getCurrentPosition(function (position) {
+      let lng = position.coords.latitude;
+      let lat = position.coords.longitude;
+      console.log(lat);
+      self.setState({ lat: lat });
+      self.setState({ lng: lng });
+    });
   };
 
   handleGetRequest = async () => {
@@ -52,12 +58,14 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getUserGeolocationDetails();
+
     this.handleGetRequest();
   }
 
   render() {
-    console.log("user", this.state.user);
-    console.log("spot details", this.state.spot);
+    console.log("lat", this.state.lat);
+    console.log("lng", this.state.lng);
+
     return (
       <>
         <Header
@@ -72,6 +80,8 @@ class App extends React.Component {
           path="/"
           render={() => (
             <AllSpots
+              mylng={this.state.lng}
+              mylat={this.state.lat}
               spots={this.state.spots}
               setSpots={this.setSpots}
               distance={this.state.distance}

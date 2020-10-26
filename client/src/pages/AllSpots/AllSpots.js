@@ -23,10 +23,10 @@ class AllSpots extends React.Component {
             return (
               <>
                 <SpotCard
-                  mylat={this.props.distance.latitude}
-                  mylng={this.props.distance.longitude}
-                  lat={spot.longitude[0]}
-                  lng={spot.latitude[0]}
+                  mylat={this.props.mylat}
+                  mylng={this.props.mylng}
+                  lat={spot.latitude[0]}
+                  lng={spot.longitude[0]}
                   id={spot.id}
                   name={spot.name}
                   img={spot.photo}
