@@ -45,7 +45,7 @@ app.use("/api/v1/spots", spotRouter);
 app.use("/api/v1/users", userRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "client/build/index.html"));
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
 app.all("*", (req, res, next) => {

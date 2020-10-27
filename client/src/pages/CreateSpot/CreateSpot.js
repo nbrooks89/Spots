@@ -113,7 +113,7 @@ class CreateSpot extends React.Component {
               onChange={this.handleInputChange}
             />
           </Form.Group>
-          <Form.Group controlId="address">
+          {/* <Form.Group controlId="address">
             <Form.Label>current location</Form.Label>
             <Form.Control
               type="checkbox"
@@ -121,7 +121,7 @@ class CreateSpot extends React.Component {
               value={this.state.address}
               onChange={this.handleChecked}
             />
-          </Form.Group>
+          </Form.Group> */}
 
           <Form.Group controlId="spotType">
             <Form.Label>Spot Type</Form.Label>

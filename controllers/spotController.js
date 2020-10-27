@@ -28,6 +28,7 @@ exports.resizeUserPhoto = CatchAsync(async (req, res, next) => {
   req.file.filename = `spot-${req.params.userId}-${Date.now()}.jpeg`;
 
   await sharp(req.file.buffer)
+    .rotate()
     .resize(500, 500)
     .toFormat("jpeg")
     .jpeg({ quality: 90 })
