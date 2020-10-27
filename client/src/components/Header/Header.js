@@ -3,7 +3,7 @@ import { Nav, Navbar, NavItem } from "react-bootstrap";
 
 import "./Header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Header extends React.Component {
   state = {
@@ -66,7 +66,7 @@ class Header extends React.Component {
             </Navbar.Collapse>
           </>
         ) : (
-          <div classname="">
+          <div className="">
             <NavLink to="/signUp" activeClassName="active">
               <span className="signUp">Signup</span>
             </NavLink>

@@ -14,11 +14,16 @@ class CreateSpot extends React.Component {
     longitude: "",
     photo: null,
     succesfulCreate: false,
+    isChecked: false,
   };
 
   handleInputChange = (event) => {
     console.log(event.target.id);
     this.setState({ [event.target.id]: event.target.value });
+  };
+
+  handlechecked = () => {
+    this.setState({ isChecked: !this.state.isChecked });
   };
 
   handleFileChange = (event) => {
@@ -106,6 +111,15 @@ class CreateSpot extends React.Component {
               name="address"
               value={this.state.address}
               onChange={this.handleInputChange}
+            />
+          </Form.Group>
+          <Form.Group controlId="address">
+            <Form.Label>current location</Form.Label>
+            <Form.Control
+              type="checkbox"
+              name="address"
+              value={this.state.address}
+              onChange={this.handleChecked}
             />
           </Form.Group>
 

@@ -10,20 +10,21 @@ class SignUp extends React.Component {
     email: "",
     password: "",
     passwordConfirm: "",
-    data: [],
+    // data: [],
     succesfulCreate: false,
-    role: "user",
+    // role: "user",
   };
   handleInputChange = (event) => {
     const { value, name } = event.target;
-
     this.setState({
       [name]: value,
       token: null,
     });
   };
+
   onSubmit = async (event) => {
-    try {
+  
+  try {
       event.preventDefault();
       const res = await fetch("/api/v1/users/signup", {
         method: "POST",
@@ -35,6 +36,7 @@ class SignUp extends React.Component {
       console.log(res);
       const data = await res.json();
       console.log(data);
+
       if (res.ok) {
         await localStorage.setItem("jwt", data.token);
         let jwt = await localStorage.getItem("jwt");
@@ -48,7 +50,7 @@ class SignUp extends React.Component {
         console.log(data);
         alert(data.message);
       }
-      // console.log(this.props.user);
+      console.log(this.props.user);
     } catch (err) {
       console.log(err);
     }
@@ -59,9 +61,9 @@ class SignUp extends React.Component {
       return <Redirect to="/" />;
     }
     return (
-      <Container className="App">
+      <Container className="App" >
         <h2>Sign Up</h2>
-        <Form className="form">
+        <Form className="form" onSubmit={this.onSubmit}>
           <Col>
             <FormGroup>
               <Label for="name">Name</Label>
@@ -82,7 +84,7 @@ class SignUp extends React.Component {
               <Input
                 type="email"
                 name="email"
-                id="exampleEmail"
+                id="email"
                 placeholder="lilMissGNAR@email.com"
                 value={this.state.email}
                 onChange={this.handleInputChange}
@@ -92,11 +94,11 @@ class SignUp extends React.Component {
           </Col>
           <Col>
             <FormGroup>
-              <Label for="Password">Password</Label>
+              <Label for="password">Password</Label>
               <Input
                 type="password"
                 name="password"
-                id="examplePassword"
+                id="password"
                 placeholder="********"
                 value={this.state.password}
                 onChange={this.handleInputChange}
@@ -106,13 +108,13 @@ class SignUp extends React.Component {
           </Col>
           <Col>
             <FormGroup>
-              <Label for="confirmPassword">Confirm Password</Label>
+              <Label for="passwordConfirm">Confirm Password</Label>
               <Input
                 type="password"
-                name="confirmPassword"
-                id="confirmPassword"
+                name="passwordConfirm"
+                id="passwordConfirm"
                 placeholder="********"
-                value={this.state.confirmPassword}
+                value={this.state.passwordConfirm}
                 onChange={this.handleInputChange}
                 required
               />

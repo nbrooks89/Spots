@@ -57,7 +57,7 @@ class App extends React.Component {
     await navigator.geolocation.getCurrentPosition(function (position) {
       let lng = position.coords.latitude;
       let lat = position.coords.longitude;
-      console.log(lat);
+
       self.setState({ lat: lat });
       self.setState({ lng: lng });
     });
@@ -70,8 +70,8 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("dis", this.state.distance);
-    console.log("lng", this.state.lng);
+    // console.log("dis", this.state.distance);
+    // console.log("lng", this.state.lng);
 
     return (
       <>
@@ -117,7 +117,12 @@ class App extends React.Component {
 
         <Route
           path="/createSpot"
-          render={() => <CreateSpot userId={this.state.user.id} />}
+          render={() => (
+            <CreateSpot
+              userId={this.state.user.id}
+              distance={this.state.distance}
+            />
+          )}
         />
         <Route
           path="/mySpots"

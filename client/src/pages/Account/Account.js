@@ -2,16 +2,7 @@ import React from "react";
 import "./Account.css";
 import { Redirect } from "react-router-dom";
 
-import {
-  Container,
-  Col,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Button,
-  Alert,
-} from "reactstrap/lib";
+import { Col, Form, FormGroup, Label, Input } from "reactstrap/lib";
 
 class Account extends React.Component {
   state = {

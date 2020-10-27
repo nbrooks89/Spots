@@ -1,9 +1,9 @@
 import React from "react";
 import "./Spot.css";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 // import { Container, Row, Col } from "../../../node_modules/reactstrap/lib";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { getDistance } from "geolib";
+// import { getDistance } from "geolib";
 
 class Spot extends React.Component {
   state = {
@@ -45,6 +45,7 @@ class Spot extends React.Component {
           <img
             className="spotImg"
             src={`/static/img/spots/${this.state.spot.photo}`}
+            alt="spot "
           ></img>
         </div>
         <div className="detailsBox">

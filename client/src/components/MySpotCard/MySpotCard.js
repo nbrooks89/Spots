@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Link, Redirect } from "react-router-dom";
-import { getDistance, getPreciseDistance } from "geolib";
+import { getDistance } from "geolib";
 
 import "./MySpotCard.css";
 
@@ -34,6 +34,7 @@ class MyspotCard extends React.Component {
         <img
           className="MySpotImg"
           src={`/static/img/spots/${this.props.img}`}
+          alt="spot"
         ></img>
         <div>distance: {mile} miles</div>
         <div className="MyBottomLayout">
