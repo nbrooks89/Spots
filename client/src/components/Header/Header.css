@@ -1,30 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap");
 .color-nav {
-  background-color: #484a47;
-  border-bottom: 1px solid #f0b30e;
+  background-color: rgb(232, 163, 163);
+  border-bottom: 1px solid rgb(180, 196, 196);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .signUp {
   font-family: "Bowlby One SC", cursive;
   color: white;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 500;
-  margin-right: 20px;
+  margin-right: 15px;
+  padding: 5px;
   /* box-shadow: 0px 1px 20px rgba(210, 123, 0, 0.674);
   background-color: rgba(199, 126, 23, 0.27);
   border-radius: 8px; */
 }
+.signUp:hover {
+  text-decoration: underline;
+}
 .logIn {
   font-family: "Bowlby One SC", cursive;
   color: white;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 500;
   margin-right: 5px;
-  /* box-shadow: 0px 1px 20px rgba(210, 123, 0, 0.674); */
-  /* background-color: rgba(199, 126, 23, 0.27);
-  border-radius: 8px;
-  margin-left: 5px; */
+}
+.logIn:hover {
+  text-decoration: underline;
 }
 
 .spots {
@@ -40,19 +43,26 @@
 }
 .Nav-Item {
   font-family: "Bowlby One SC", cursive;
-  color: #eeedea;
+  color: white;
 
-  font-size: 15px;
+  font-size: 20px;
+}
+.Nav-Item:hover {
+  background-color: #f08aa0;
+
+  font-size: 25px;
 }
 .nav {
   display: inline-block;
-  border-bottom: 5px solid #129d96;
+  border-bottom: 5px solid rgb(180, 196, 196);
 }
 
 .navbar-toggler {
-  border-color: rgb(192, 187, 187) !important;
+  background-color: #f08aa0;
+  border-color: #f08aa0 !important;
   display: inline;
 }
+
 .item {
   margin-top: 15px;
 }

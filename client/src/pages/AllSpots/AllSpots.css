@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap");
+
+.all-spots-container {
+  display: flex;
+  flex-direction: column;
+}
 .spotGrid {
   padding: 10px;
   overflow: hidden;
@@ -5,5 +11,25 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: end;
   grid-gap: 3rem;
+  margin-top: 20px;
+}
+
+.all-spots-header {
+  align-self: center;
+  /* border-bottom: 3px solid rgb(174, 190, 37); */
+  width: 300px;
+  font-family: "Bowlby One SC", cursive;
   margin-top: 80px;
+  text-align: center;
+  font-size: 55px;
+  color: rgb(62, 72, 100);
+}
+@media screen and (max-width: 550px) {
+  .spotGrid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .all-spots-header {
+    font-size: 40px;
+  }
 }

@@ -2,6 +2,8 @@ import React from "react";
 import "./CreateSpot.css";
 import { Redirect } from "react-router-dom";
 import { Form } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 class CreateSpot extends React.Component {
   state = {
@@ -93,7 +95,7 @@ class CreateSpot extends React.Component {
     }
     return (
       <div className="createContainer">
-        <h1>Create Spot</h1>
+        <div className="create-header">Create Spot</div>
         <Form className="form" onSubmit={this.onSubmit}>
           <Form.Group controlId="name">
             <Form.Label>Name the Spot</Form.Label>
@@ -144,13 +146,20 @@ class CreateSpot extends React.Component {
               onChange={this.handleInputChange}
             />
           </Form.Group>
-          <Form.Group controlId="photo">
+          <Form.Group controlId="input"  >
+          <Form.Label for ="input" id="label">
+             <FontAwesomeIcon icon={faCamera} size="3x" />
+             </Form.Label>
             <Form.File
               type="file"
               name="photo"
-              label="Example file input"
-              onChange={this.handleFileChange}
-            />
+               onChange={this.handleFileChange}
+               
+           / >
+            
+             {
+         this.state.photo !== null && <div>photo uploaded</div>
+          }
           </Form.Group>
 
           <button>Submit</button>

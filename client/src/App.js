@@ -27,7 +27,7 @@ class App extends React.Component {
     distance: {},
   };
   setSpots = (data) => {
-    this.setState({ spots: data.data.spots });
+    this.setState({ spots: data });
   };
 
   setUser = (user) => {
@@ -126,7 +126,8 @@ class App extends React.Component {
         />
         <Route
           path="/mySpots"
-          render={() => <MySpots distance={this.state.distance} />}
+          render={() => <MySpots distance={this.state.distance} spots={this.state.spots}  mylng={this.state.lng}
+          mylat={this.state.lat} />}
         />
 
         <Route

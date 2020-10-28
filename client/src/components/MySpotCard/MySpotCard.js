@@ -1,31 +1,14 @@
 import React from "react";
 
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getDistance } from "geolib";
 
 import "./MySpotCard.css";
 
 class MyspotCard extends React.Component {
-  state = {
-    succesfulDelete: false,
-  };
-
-  deleteSpot = async () => {
-    await fetch(`/api/v1/spots/${this.props.id}`, {
-      method: "DELETE",
-    });
-    this.setState({ successfulDelete: true });
-  };
+  
   render() {
-    if (this.state.successfulDelete) {
-      return <Redirect to="/mySpots" />;
-    }
-    var dis = getDistance(
-      { latitude: this.props.lng * 1, longitude: this.props.lat * 1 },
-      { latitude: this.props.mylat * 1, longitude: this.props.mylng * 1 }
-    );
-    var miles = dis * 0.00062137;
-    var mile = miles.toFixed(0);
+   
 
     return (
       <div className="container3">
@@ -36,7 +19,7 @@ class MyspotCard extends React.Component {
           src={`/static/img/spots/${this.props.img}`}
           alt="spot"
         ></img>
-        <div>distance: {mile} miles</div>
+        <div className="distance">distance: {this.props.distance} miles</div>
         <div className="MyBottomLayout">
           <Link to={"/spots/" + this.props.id}>
             <div className="MyDetailsBtn">DETAILS</div>
@@ -45,9 +28,7 @@ class MyspotCard extends React.Component {
             <Link to={"/spotupdate/" + this.props.id}>
               <div className="editBtn">EDIT</div>
             </Link>
-            <button className="deleteBtn" onClick={this.deleteSpot}>
-              Delete
-            </button>
+
           </div>
         </div>
       </div>

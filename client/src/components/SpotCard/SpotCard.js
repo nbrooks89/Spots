@@ -5,7 +5,7 @@ import { getDistance } from "geolib";
 
 import "./SpotCard.css";
 
-class spotCard extends React.Component {
+class SpotCard extends React.Component {
   render() {
     var dis = getDistance(
       { latitude: this.props.lng * 1, longitude: this.props.lat * 1 },
@@ -37,4 +37,4 @@ class spotCard extends React.Component {
   }
 }
 
-export default spotCard;
+export default SpotCard;

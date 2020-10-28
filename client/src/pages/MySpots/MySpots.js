@@ -1,5 +1,6 @@
 import React from "react";
 import "./MySpots.css";
+import { getDistance } from "geolib";
 import MySpotCard from "../../components/MySpotCard/MySpotCard";
 
 class MySpots extends React.Component {
@@ -14,8 +15,22 @@ class MySpots extends React.Component {
       },
     });
     const data = await res.json();
-    console.log(data);
-    this.setState({ spots: data.data.user.spots });
+    // console.log(data.data.user.spots);
+    data.data.user.spots.forEach(spot => {
+      let lat = spot.latitude[0];
+      let lng = spot.longitude[0];
+      const dis = getDistance(
+        { latitude: lng* 1, longitude: lat * 1 },
+        { latitude: this.props.mylat * 1, longitude: this.props.mylng * 1 }
+      );
+      var miles = (dis * 0.00062137).toFixed(0)
+      console.log(miles)
+      spot.distance = miles;
+    });
+    const newarray = data.data.user.spots.sort((a,b) =>{
+      return a.distance< b.distance ? -1 : a.distance> b.distance ? 1:0
+    })
+    this.setState({ spots: newarray });
   };
 
   componentDidMount() {
@@ -25,16 +40,14 @@ class MySpots extends React.Component {
   render() {
     console.log("spots", this.state.spots);
     return (
-      <>
-        <div className="MySpotGrid">
+      <div className="all-spots-container">
+       <div className="my-spots-header" >My Spots</div>
+        <div className="mySpotGrid">
           {this.state.spots.map((spot) => {
             return (
               <>
                 <MySpotCard
-                  mylat={this.props.distance.latitude}
-                  mylng={this.props.distance.longitude}
-                  lat={spot.longitude[0]}
-                  lng={spot.latitude[0]}
+                 distance={spot.distance}
                   id={spot.id}
                   name={spot.name}
                   img={spot.photo}
@@ -47,7 +60,7 @@ class MySpots extends React.Component {
             );
           })}
         </div>
-      </>
+      </div>
     );
   }
 }

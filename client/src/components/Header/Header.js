@@ -3,7 +3,7 @@ import { Nav, Navbar, NavItem } from "react-bootstrap";
 
 import "./Header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class Header extends React.Component {
   state = {
@@ -11,7 +11,15 @@ class Header extends React.Component {
     password: "",
     navigate: false,
     succesfulLogout: false,
+    isOpen: false
+
   };
+
+  closeNavbar =() =>{
+    this.setState({
+        isOpen: false
+    });
+}
 
   handleLogOut = async (event) => {
     try {
@@ -28,7 +36,7 @@ class Header extends React.Component {
   render() {
     console.log(this.props.user);
     return (
-      <Navbar expand="xlg" className="color-nav" fixed="top">
+      <Navbar collapseOnSelect expand="xlg" className="color-nav" fixed="top">
         {this.props.user.id ? (
           <>
             <div>
@@ -39,7 +47,7 @@ class Header extends React.Component {
               >
                 <span className="signUp">Logout</span>
               </NavLink>
-              <NavLink to="/account" activeClassName="active">
+              <NavLink to="/account"  activeClassName="active">
                 <span className="signUp">Account</span>
               </NavLink>
             </div>
@@ -48,19 +56,19 @@ class Header extends React.Component {
             <Navbar.Collapse id="responsive-navbar-nav ">
               <Nav>
                 <NavItem className=" item ml-auto">
-                  <NavLink to="/" activeClassName="active">
+                  <Nav.Link eventKey="1"  as={Link} to="/" activeClassName="active">
                     <span className="Nav-Item">All Spots</span>
-                  </NavLink>
+                  </Nav.Link>
                 </NavItem>
                 <NavItem className=" item ml-auto">
-                  <NavLink to="/mySpots" activeClassName="active">
-                    <span className="Nav-Item">My Spots</span>
-                  </NavLink>
+                  <Nav.Link eventKey="2"  as={Link} to="/mySpots" activeClassName="active" >
+                    <span className="Nav-Item" >My Spots</span>
+                  </Nav.Link>
                 </NavItem>
                 <NavItem className=" item ml-auto">
-                  <NavLink to="/createSpot" activeClassName="active">
+                  <Nav.Link eventKey="3"  as={Link} to="/createSpot" activeClassName="active">
                     <span className="Nav-Item">Create Spot</span>
-                  </NavLink>
+                  </Nav.Link>
                 </NavItem>
               </Nav>
             </Navbar.Collapse>

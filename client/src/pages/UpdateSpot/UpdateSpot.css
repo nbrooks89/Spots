@@ -2,23 +2,37 @@
   margin-top: 40px;
 }
 
-h1 {
-  color: rgb(9, 10, 9);
-  margin-top: 80px;
-  font-size: 25px;
+.update-header {
+  align-self: center;
+  /* border-bottom: 3px solid rgb(174, 190, 37); */
+  width: 300px;
   font-family: "Bowlby One SC", cursive;
-  text-decoration: underline;
-  text-decoration-color: rgb(219, 157, 41);
+  margin-top: 80px;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(62, 72, 100);
 }
 .updateContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #dedfde;
   height: 100vh;
+}
+
+input#input {
+  display: none;
+}
+label.form-label {
+  cursor: pointer;
+  overflow: visible;
+}
+label.form-label:hover {
+  color: #f08aa0;
 }
 label {
   font-family: "Lato", sans-serif;
+  color: rgb(62, 72, 100);
+  font-size: 17px;
 }
 
 .formGroup {

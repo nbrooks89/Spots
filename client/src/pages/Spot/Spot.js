@@ -37,19 +37,18 @@ class Spot extends React.Component {
     }
     console.log("mySpot", this.state.spot);
     return (
-      <div className="mainContainer">
-        <div className="name">
-          <div className="innerName">{this.state.spot.name}</div>
-        </div>
+      <div className="details-container">
+        <div className="details-name-header">{this.state.spot.name}</div>
+         <div className="img-details">
         <div className="container2">
           <img
-            className="spotImg"
+            className="spotImgDetails"
             src={`/static/img/spots/${this.state.spot.photo}`}
             alt="spot "
           ></img>
         </div>
-        <div className="detailsBox">
-          <span className="detailsHead">Details: </span>
+        <div className="details-box">
+          <span className="details-head">Details </span>
           <div className="spot-address">
             Address:
             <span className="innertext">{this.state.spot.address}</span>
@@ -63,6 +62,7 @@ class Spot extends React.Component {
             Description:
             <span className="innertext">{this.state.spot.description}</span>
           </div>
+        </div>
         </div>
       </div>
     );

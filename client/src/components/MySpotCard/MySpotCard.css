@@ -1,6 +1,6 @@
 .container3 {
   padding: 5px;
-  border: 2px solid #878e88;
+  border: 1px solid #777;
   text-align: center;
   margin: 0px;
   padding: 0px;
@@ -9,13 +9,13 @@
   display: grid;
   justify-items: center;
   padding: 0;
-  background-color: #dedfde;
-  border-radius: 5px;
+
+  border-radius: 2px;
 }
 
 .MySpotName {
   font-size: 25px;
-  color: #333533;
+  color: rgb(62, 72, 100);
   padding: 10px;
   font-weight: 700;
 }
@@ -29,7 +29,7 @@ a {
 }
 .MySpotImg {
   display: flex;
-  /* max-height: 300px; */
+  height: 350px;
   width: 100%;
   object-fit: cover;
 }
@@ -41,8 +41,8 @@ a {
   padding-top: 0;
   font-size: 20px;
   color: white;
-  border: 1px solid #272343;
-  background-color: rgb(204, 134, 43);
+  border: 1px solid #f08aa0;
+  background-color: #f08aa0;
   border-radius: 5px;
   font-weight: 500;
   padding-top: 0;
@@ -60,32 +60,30 @@ a {
   padding-top: 0;
   font-size: 20px;
   color: white;
-  border: 1px solid #272343;
-  background-color: rgb(233, 138, 15);
+  border: 1px solid rgb(232, 163, 163);
+  background-color: rgb(232, 163, 163);
   border-radius: 5px;
   padding-top: 0;
   padding-bottom: 0;
   height: 40px;
   padding-right: 10px;
   padding-left: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 4px rgba(44, 43, 43, 0.463);
 }
 .editBtn {
   display: flex;
   align-items: center;
-  /* margin-left: 1px; */
-  padding-top: 0;
+  margin-top: 10px;
   font-size: 15px;
   color: white;
   border: 1px solid #272343;
-  background-color: #606260;
+  background-color: rgb(132, 148, 152);
   border-radius: 5px;
   font-weight: 500;
-  padding-top: 0;
-  padding-bottom: 0;
   height: 30px;
   padding-right: 10px;
   padding-left: 10px;
+  margin-right: 10px;
 }
 .editBtn:hover {
   cursor: pointer;
@@ -95,16 +93,15 @@ a {
   padding-top: 0;
   font-size: 15px;
   color: white;
-  border: 1px solid #272343;
-
+  border: 1px solid #92919c;
+  background-color: rgb(183, 199, 199);
   border-radius: 5px;
   padding-top: 0;
   padding-bottom: 0;
   height: 30px;
   padding-right: 10px;
   padding-left: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-  background-color: #484a47;
+  box-shadow: 0px 1px 4px rgba(44, 43, 43, 0.463);
 }
 .deleteBtn {
   display: flex;

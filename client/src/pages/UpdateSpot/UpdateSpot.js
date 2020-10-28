@@ -2,6 +2,8 @@ import React from "react";
 import "./UpdateSpot.css";
 import { Redirect } from "react-router-dom";
 import { Form } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 class UpdateSpot extends React.Component {
   state = {
@@ -16,6 +18,13 @@ class UpdateSpot extends React.Component {
       succesfulUpdate: false,
     },
     spot: {},
+    succesfulDelete: false,
+  };
+  deleteSpot = async () => {
+    await fetch(`/api/v1/spots/${this.props.match.match.params.id}`, {
+      method: "DELETE",
+    });
+    this.setState({ successfulDelete: true });
   };
 
   handleGetRequest = async () => {
@@ -97,13 +106,16 @@ class UpdateSpot extends React.Component {
   }
 
   render() {
+    if (this.state.successfulDelete) {
+      return <Redirect to="/" />;
+    }
     console.log("spot details", this.state.spot);
     if (this.state.successfulUpdate) {
       return <Redirect to="/" />;
     }
     return (
       <div className="updateContainer">
-        <h1>Update Spot</h1>
+        <div className="update-header">Update Spot</div>
         <Form className="form" onSubmit={this.onSubmit}>
           <Form.Group classname="" controlId="name">
             <Form.Label>Name the Spot</Form.Label>
@@ -144,14 +156,21 @@ class UpdateSpot extends React.Component {
               onChange={this.handleInputChange}
             />
           </Form.Group>
-          <Form.Group controlId="photo">
+         
+          <Form.Group controlId="input"  >
+          <Form.Label for ="input" id="label">
+             <FontAwesomeIcon icon={faCamera} size="3x" />
+             </Form.Label>
             <Form.File
               type="file"
               name="photo"
-              defaultValue={this.state.form.photo}
-              label="Add A Photo"
-              onChange={this.handleFileChange}
-            />
+               onChange={this.handleFileChange}
+               
+           / >
+             {
+         this.state.photo !== null && <div>photo uploaded</div>
+          }
+            
           </Form.Group>
 
           <button>Submit</button>
@@ -174,6 +193,9 @@ class UpdateSpot extends React.Component {
             />
           </Form.Group>
         </Form>
+        <button className="deleteBtn" onClick={this.deleteSpot}>
+              Delete Spot
+            </button>
       </div>
     );
   }

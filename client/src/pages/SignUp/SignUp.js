@@ -62,7 +62,7 @@ class SignUp extends React.Component {
     }
     return (
       <Container className="App" >
-        <h2>Sign Up</h2>
+        <div className="signup-header" >My Spots</div>
         <Form className="form" onSubmit={this.onSubmit}>
           <Col>
             <FormGroup>
