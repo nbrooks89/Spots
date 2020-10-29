@@ -22,9 +22,9 @@ class AllSpots extends React.Component {
       spot.distance = miles;
     });
    const newarray= data.data.spots.sort((a,b) =>{
-    return a.distance< b.distance ? -1 : a.distance> b.distance ? 1:0
+    return a.distance - b.distance
     })
-    console.log(data.data.spots)
+    console.log(newarray)
     this.props.setSpots(newarray);
   };
 

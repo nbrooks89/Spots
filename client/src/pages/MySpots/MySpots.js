@@ -5,7 +5,7 @@ import MySpotCard from "../../components/MySpotCard/MySpotCard";
 
 class MySpots extends React.Component {
   state = {
-    spots: [],
+    spotss: [],
   };
   currentUser = async () => {
     const res = await fetch("/api/v1/users/me", {
@@ -28,9 +28,9 @@ class MySpots extends React.Component {
       spot.distance = miles;
     });
     const newarray = data.data.user.spots.sort((a,b) =>{
-      return a.distance< b.distance ? -1 : a.distance> b.distance ? 1:0
+      return a.distance - b.distance
     })
-    this.setState({ spots: newarray });
+    this.setState({ spotss: newarray });
   };
 
   componentDidMount() {
@@ -43,7 +43,7 @@ class MySpots extends React.Component {
       <div className="all-spots-container">
        <div className="my-spots-header" >My Spots</div>
         <div className="mySpotGrid">
-          {this.state.spots.map((spot) => {
+          {this.state.spotss.map((spot) => {
             return (
               <>
                 <MySpotCard
