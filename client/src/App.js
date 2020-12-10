@@ -49,7 +49,7 @@ class App extends React.Component {
       let user = jwt_decode(jwt);
 
       this.setUser(user);
-      console.log("user", user);
+      console.log("user-jwt", user);
     }
   };
   getUserGeolocationDetails = async () => {

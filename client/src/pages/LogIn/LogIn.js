@@ -58,7 +58,7 @@ class LogIn extends React.Component {
     }
 
     return (
-      <Container className="App">
+      <Container className="loginContainer">
         <h2>Log In</h2>
         <Form className="form" onSubmit={this.onSubmit}>
           <Col>

@@ -23,8 +23,7 @@ class SignUp extends React.Component {
   };
 
   onSubmit = async (event) => {
-  
-  try {
+    try {
       event.preventDefault();
       const res = await fetch("/api/v1/users/signup", {
         method: "POST",
@@ -61,8 +60,8 @@ class SignUp extends React.Component {
       return <Redirect to="/" />;
     }
     return (
-      <Container className="App" >
-        <div className="signup-header" >My Spots</div>
+      <Container className="signupContainer">
+        <h2>SIGN UP</h2>
         <Form className="form" onSubmit={this.onSubmit}>
           <Col>
             <FormGroup>
@@ -120,7 +119,7 @@ class SignUp extends React.Component {
               />
             </FormGroup>
           </Col>
-          <Input type="submit" value="Submit" />
+          <Input className="submit" type="submit" value="Submit" />
         </Form>
       </Container>
     );
